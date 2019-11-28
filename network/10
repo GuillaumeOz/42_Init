@@ -1,0 +1,14 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    10                                                 :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: gozsertt <gozsertt@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2019/06/18 14:02:27 by gozsertt          #+#    #+#              #
+#    Updated: 2019/06/26 13:51:05 by gozsertt         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+echo '\n[Les différents appareils réseaux entre mon poste et le domaine slash16.org]:\n'
+traceroute slash16.org

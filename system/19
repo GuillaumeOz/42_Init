@@ -1,0 +1,31 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    19                                                 :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: gozsertt <gozsertt@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2019/06/20 14:20:22 by gozsertt          #+#    #+#              #
+#    Updated: 2019/06/26 14:50:08 by gozsertt         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+# systemctl list-unit-files --type=service | grep "enable" | awk -F ".service" '{print $1}'
+
+autovt@
+console-setup
+cron
+getty@
+irqbalance
+keyboard-setup
+networking
+rsync
+rsyslog
+ssh
+sshd
+syslog
+systemd-timesyncd
+vboxadd
+vboxadd
+
+Nom du type de service: daemon

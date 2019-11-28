@@ -1,0 +1,16 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    23                                                 :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: gozsertt <gozsertt@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2019/06/20 17:29:47 by gozsertt          #+#    #+#              #
+#    Updated: 2019/06/26 14:51:12 by gozsertt         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+Pour la session graphique, il faut simplement se connecter à son login et entrer
+son mot de passe quand il est demandé.
+Pour la session ssh, il faut utiliser la commande ssh "<user>@<ip>" et entrer 
+son mot de passe quand il est demandé.

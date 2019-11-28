@@ -1,0 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    01                                                 :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: gozsertt <gozsertt@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2019/06/19 12:57:18 by gozsertt          #+#    #+#              #
+#    Updated: 2019/06/26 13:59:10 by gozsertt         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+Recherchez le dossier de configuration système Unix, /etc, puis dans le fichier
+debian_version.
+/etc/debian_version

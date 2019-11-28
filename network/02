@@ -1,0 +1,17 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    02                                                 :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: gozsertt <gozsertt@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2019/06/26 13:43:25 by gozsertt          #+#    #+#              #
+#    Updated: 2019/06/26 13:46:08 by gozsertt         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+echo '\n[Adresse de Broadcast]:\n'
+ifconfig en0 | grep broadcast | awk '{print $6}'
+
+echo '\n[Adresses IP qui font partie du même sous-réseau]:\n'
+arp -a

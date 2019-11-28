@@ -1,0 +1,20 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    11                                                 :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: gozsertt <gozsertt@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2019/06/18 14:07:38 by gozsertt          #+#    #+#              #
+#    Updated: 2019/06/26 13:51:18 by gozsertt         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+Exécutez traceroute sur deux site different (slash16.org et google.com),
+la ligne 1 reste la même.
+Elle correspond à l'adresse IP locale, puis la ligne 2 au routeur nat qui remappe 
+l'adresse IP locale en une adresse IP publique pointant sur dc3, l'hôte de notre 
+adresse IP publique.
+- 1: adresse IP locale
+- 2: IP NAT server
+- 3: IP publique

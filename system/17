@@ -1,0 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    17                                                 :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: gozsertt <gozsertt@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2019/06/19 19:16:21 by gozsertt          #+#    #+#              #
+#    Updated: 2019/06/26 14:49:41 by gozsertt         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+echo '\n[Commande qui, en parallèle de la session graphique, permet de se
+connecter en ssh sur la machine]:\n'
+ssh 127.0.0.1

@@ -1,0 +1,340 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    03                                                 :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: gozsertt <gozsertt@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2019/06/20 21:12:36 by gozsertt          #+#    #+#              #
+#    Updated: 2019/06/26 18:46:43 by gozsertt         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+#!/bin/bash
+
+# Colors
+_GREEN='\033[32m'
+_GREY='\033[37m'
+
+BATELEUR='Le Bateleur : Ne cherchez pas à manipuler les événements à votre convenance, laissez le temps faire son travail ! \nIl faudra surtout restez vous-même, car tricher vous rendrait maladroit et vous perdriez en crédibilité. \nVotre moitié vous idéalise énormément, tâchez de ne jamais décevoir sa confiance, car étant de nature rancunière, \nil serait peu probable qu il vous pardonne une maladresse, ou un acte manqué. '
+IMPERATRICE='L Impératrice : Qui n avance pas, recule, vous voilà prévenu ! Si vous voulez que l amour s épanouisse \nharmonieusement dans votre vie, il va falloir y mettre du vôtre, et si possible sans tarder. Vous ne gagnerez rien en \nprenant votre temps. Si des tensions existent au sein de votre couple, elle disparaîtront pour laisser la place \nà une meilleure communication. Un nouvel équilibre s installe, un climat de confiance s établit, la sérénité est prête à renaître. '
+PAPE='Le Pape : Un rapport de force subsistera toujours entre vous et votre partenaire, mais rassurez-vous, vos liens \naffectifs sont sous haute protection. Une bonne communication s installera dans votre couple, ce qui représentera un \navantage pour toutes les décisions communes importantes que vous aurez à prendre ensemble. A deux, vous ne ferez qu un, unis \npour le meilleur et pour le pire, dans le bonheur et l adversité. '
+CHARIOT='Le Chariot : Vous vous êtes promis d atteindre un but, le chariot vous en donne les moyens et vous permet d exprimer \net de donner le meilleur de vous-même. Encouragé à aller de l avant, et à aller jusqu au bout de vos entreprises, \nvous maintiendrez la pression tant que vous n aurez pas obtenu ce que vous voulez. '
+HERMITE='L Hermite : Vous avancerez seul dans le noir, ne comptant que sur vous-même, ne voyant que ce qui vous est donné de \nvoir... Nous savons que l essentiel est invisible pour les yeux, et que seul votre lanterne intérieure, comprenez \nvotre intuition, jettera un faisceau de lumière dans le couloir obscur de votre destinée. Prenez conscience de votre valeur, \nne sous-estimez pas vos capacités, et laissez le temps égrener son expérience dans le sablier de votre vie. '
+FORCE='La Force : Contrairement au Chariot qui symbolise une volonté qui s extériorise, la Force se manifeste davantage de \nfaçon beaucoup plus intériorisée. Vous disposez d une grande maîtrise de vous, vous êtes titulaire d une énergie qui \nvous nourrit, vous construit, et vous aide à surmonter bons nombres de difficultés. C est la force tranquille, \nla détermination et la conviction que vous allez réussir, et que toutes vos entreprises seront menées jusqu au bout, \navec succès, bien entendu ! '
+ARCANE='L Arcane sans nom : Rien n est éternel, rien ne meurt jamais, mais tout se transforme, c est l éternel recommencement. \nLa mort est le nom que l on donne à la fin de notre existence terrestre, à ce qui est visible pour nos yeux, mais \naprès, il y a autre chose, un état différent, une préparation à une nouvelle incarnation, à de nouvelles expériences... \nUn renouvellement perpétuel qui nous conduira à terme à la libération totale du corps, au profit d une libération \ncomplète de l esprit. '
+DIABLE='Le Diable : Ne restez pas attaché à des valeurs que vous pensez essentielles, mais qui sont, en définitive, \ntotalement superficielles. Il est temps de vous libérer de votre carapace, et de laisser exprimer d autres valeurs qui \nsommeillent en vous. La passion peut devenir constructive, l amour éternel, la sexualité procréatrice, celle qui donne la vie. \nRetournez à la source, la vraie, l unique, celle du début, là où tout commence, à l origine, retournez à \nl amour absolu, celui qui ne vous décevra jamais. '
+ETOILE='L Etoile : Ayez confiance en votre potentiel, vous avez entre vos mains toutes les espérances du bonheur. Cet arcane \nest annonciateur d espoir, de réussite, d un événement heureux qui surviendra dans votre vie. C est en vous-même qu il faudra chercher votre bonne étoile, souvenez-vous que l univers forme un grand ensemble, que tout est en tout, et que \nvous avez aussi en vous une part de bonheur et de joie, dont vous êtes le garant pour l éternité. '
+SOLEIL='Le Soleil : L altruisme et la générosité soulignent et définissent bien votre personnalité. Vous saurez briller dans \nvotre vie de couple tout comme vous êtes capable de le faire dans n importe quels pans de votre destinée. Ne perdez \npas votre tour, la chance et la réussite ne passent pas tous les jours, mais quand elles ne sont pas là, vous trouvez \nquand même que la vie est belle. '
+MONDE='Le Monde : Vous savez que vous êtes le créateur de votre vie, que le monde sera ce que en ferez, ce n est autre que la \nloi de la cause à effet. Vous avez les cartes en mains, les meilleurs atouts dans votre jeu, vous êtes désormais \ncondamné à réussir. Vous pouvez avoir confiance en vous ainsi qu en votre partenaire. C est une certitude. '
+PAPESSE='La Papesse : Même si vous croyez avoir pensé à tout, ne négligez pas les détails, c est justement le petit grain de \nsable qui pourrait enrayer la machine à bonheur. Repassez en revue chaque point important. Donnez-vous, s il le faut, \nencore un peu de temps, surtout si vous estimez en avoir besoin. Soyez sage, patient, verbalisez chacune de vos \npensées, et si vous avez du mal à vous exprimer pour diverses raisons, et bien écrivez-le, cela marche très bien aussi ! '
+EMPEREUR='L Empereur : Concret, réaliste, votre force de caractère saura faire face aux difficultés que vous rencontrerez dans \nvotre couple. Vous savez parfaitement ce que vous voulez et comment faire pour l obtenir. Vous pouvez avoir la \ncertitude que votre vie amoureuse sera une réussite, car vous ferez tout pour que cela se passe le plus harmonieusement \npossible, mais si vous n avez pas encore rencontré l âme sœur, ne désespérez pas, une rencontre est toute proche. '
+AMOUREUX='L Amoureux : Choisir, c est se déterminer, c est marquer sa différence, c est affirmer et assumer sa personnalité. \nChoisir ou ne pas choisir, c est devenir maître ou victime de soi, de ses émotions, de ses sentiments et de ses \nmotivations. Quelle que soit la direction que vous allez emprunter, elle sera sûrement bonne, car elle aura fait appel à \nvotre réflexion profonde, et par conséquent à ce que votre destin vous impose dans le seul souci de votre bien-être \net de votre évolution personnelle. '
+JUSTICE='La Justice : Vous comprendrez que pour atteindre vos objectifs, pour accomplir votre volonté, il vous faudra observer \nrigoureusement un équilibre. La voie du milieu sera encore et toujours la meilleure démarche, mais certainement aussi \nla plus difficile à suivre. Émotionnellement, vous risquerez d être constamment tourmenté si vous ne parvenez pas \nà mettre les choses au point avec votre partenaire. Ne laissez planer aucun doute, brisez la loi du silence, imposez-vous ! '
+ROUE_DE_FORTUNE='La Roue de fortune : Le hasard, disait Albert Einstein, "c est la formule qu emploie Dieu lorsqu il veut \nrester anonyme". Si le hasard peut se manifester à chaque tour de roue, sachez que vous pouvez aussi le provoquer, \nles événements sont écrits, il faut seulement les réveiller. Semez et vous récolterez. Ne soyez pas attaché à la roue du destin, \nne subissez pas votre vie, mais montrez-vous supérieur en la laissant tourner sur votre propre initiative. '
+PENDU='Le Pendu : Il est trop tard pour agir, il faut assumer, payer et subir les conséquences de ses actes, même si cela nous \ndemande de faire abstraction totale de notre fierté et de notre orgueil. Si nous acceptons la situation inconfortable \ndu Pendu, c est dans le seul et unique but de retrouver très prochainement une position plus favorable. Après \nl acceptation de ses erreurs, on peut être à nouveau capable de retrouver l équilibre, et de rétablir la situation, comme au début. '
+TEMPERANCE='La Tempérance : Avec le temps, les êtres se tempèrent, les conflits s estompent, le dialogue redevient possible. \nAvant d entreprendre ou de décider quoi que ce soit, prenez le temps de bien peser le pour et le contre, et ne brûlez pas \nles étapes, car mieux vaut parfois ne rien faire plutôt que de mal faire. Dans tous les cas, vous agirez en \nconnaissance de cause, sans vous laisser influencer. Vous avez le libre choix, le libre arbitre, ne le gaspillez pas ! '
+MAISON_DIEU='La Maison Dieu : La Maison Dieu vous met en garde contre tout ce que vous entreprenez sans vous assurer que les \nbases de votre édifice soient suffisamment solides. N accordez pas votre confiance sans avoir pris le recul nécessaire \nqu il faut à l égard de toutes démarches importantes. Mais si malheureusement, vous devez être malgré tout \nconfronté à la chute, consolez-vous en sachant que vous pourrez repartir aussitôt à la conquête des sommets les plus hauts. '
+LUNE='La Lune : Dans la nuit, l âme de lune est une représentation symbolique de vos cinq sens. Soyez à l écoute de vos \némotions, n étouffez pas votre sensibilité, mais ne vous bercez pas d illusion non plus, regardez les choses telles qu elles \nsont et non pas comme vous voudriez qu elles soient. '
+JUGEMENT='Le Jugement : C est une période de transmutation profonde et de métamorphose, vos sentiments changent, évoluent, \nse transforment, vous êtes à l aube de la découverte. Vous laisserez tous vos vieux préjugés derrière vous. Cette carte est \nl indice d un renouveau important après une période de crise ou de solitude, une renaissance, une réussite \nretentissante affective. '
+MAT='Le Mat : Dans votre tirage, le Mat représente la certitude que vous avez besoin d être seul dans votre vie affective. \nVous n êtes pas prêt, pour le moment, à vous engager sentimentalement, vous seriez incapable d éprouver des sentiments et \nencore moins de vous fixer. Malgré le fait que vous cherchez votre point d encrage, vous avez encore de nombreuses \nexpériences à vivre avant de vous arrêter. '
+
+randomA="$((1 + RANDOM % 22))"
+
+while [ -z $randomB ] || [ $randomB -eq $randomA ]
+do
+        randomB="$((1 + RANDOM % 22))"
+done
+
+while [ -z $randomC ] || [ $randomC -eq $randomA ] || [ $randomC -eq $randomB ]
+do
+        randomC="$((1 + RANDOM % 22))"
+done
+
+printf "Bienvenue,"
+printf "\nVous êtes prêts à tirer les cartes ?\n\n"
+sleep 0.5
+
+while [ -z $reponse ] || [ $reponse != 'oui' ]
+do
+        read -p 'Dites oui : ' reponse
+done
+sleep 0.5
+clear
+
+while :; do
+  read -p 'Veuillez choisir une carte comprise entre 1 et 22 : ' carte1
+  [[ $carte1 =~ ^[0-9]+$ ]] || { echo "Cette carte n'existe pas"; continue; }
+  if (($carte1 >= 1 && $carte1 <= 22)); then
+	sleep 0.5
+    echo "Ok"
+	sleep 1.5
+	clear
+    break
+  else
+    echo "Vous n avez pas bien compris"
+	sleep 0.5
+  fi
+done
+
+while :; do
+  read -p "Veuillez choisir une autre carte comprise entre 1 et 22 et differente de la carte $carte1 : " carte2
+  [[ $carte2 =~ ^[0-9]+$ ]] || { echo "Cette carte n'existe pas"; continue; }
+  if ((($carte2 >= 1 && $carte2 <= 22)) && [ $carte1 != $carte2 ]); then
+	echo "Mh..."
+	sleep 1
+    echo "J aurais pas choissis celle la..."
+	sleep 1.5
+	clear
+    break
+  else
+    echo "Vous n avez pas bien compris"
+	sleep 0.5
+  fi
+done
+
+while :; do
+  read -p "Veuillez choisir une autre carte comprise entre 1 et 22 et differente de la carte $carte1 et $carte2 : " carte3
+  [[ $carte3 =~ ^[0-9]+$ ]] || { echo "Cette carte n'existe pas"; continue; }
+  if ((($carte3 >= 1 && $carte3 <= 22)) && [ $carte3 != $carte2 ] && [ $carte3 != $carte1 ]); then
+    echo "Très bien..."
+	sleep 1.5
+	clear
+    break
+  else
+    echo "Vous n avez pas bien compris"
+	sleep 0.5
+  fi
+done
+
+printf "$_GREEN          _____\n"
+printf "$_GREEN         |  .  | _____\n"
+printf "$_GREEN         | /.\ ||  ^  | _____\n"
+printf "$_GREEN         |(_._)|| / \ ||  _  |\n"
+printf "$_GREEN         |  |  || \ / || ( ) |\n"
+printf "$_GREEN         |____ ||  .  ||(_'_)|\n"
+printf "$_GREEN                |____ ||  |  |\n"
+printf "$_GREEN                       |____ |\n"
+
+sleep 2
+
+printf "$_GREY \nConcernant votre passé, vous avez tiré : \n"
+
+case $randomA in
+        "1")
+        	printf "$BATELEUR"
+            ;;
+        "2")
+        	printf "$IMPERATRICE"
+            ;;
+        "3")
+        	printf "$PAPE"
+            ;;
+        "4")
+        	printf "$CHARIOT"
+            ;;
+        "5")
+        	printf "$HERMITE"
+            ;;
+        "6")
+        	printf "$FORCE"
+            ;;
+        "7")
+        	printf "$ARCANE"
+            ;;
+        "8")
+        	printf "$DIABLE"
+            ;;
+        "9")
+        	printf "$ETOILE"
+            ;;
+        "10")
+        	printf "$SOLEIL"
+            ;;
+        "11")
+        	printf "$MONDE"
+            ;;
+        "12")
+        	printf "$PAPESSE"
+            ;;
+        "13")
+        	printf "$EMPEREUR"
+            ;;
+        "14")
+        	printf "$AMOUREUX"
+            ;;
+        "15")
+        	printf "$JUSTICE"
+            ;;
+        "16")
+        	printf "$ROUE_DE_FORTUNE"
+            ;;
+        "17")
+        	printf "$PENDU"
+            ;;
+        "18")
+        	printf "$TEMPERANCE"
+            ;;
+        "19")
+        	printf "$MAISON_DIEU"
+            ;;
+        "20")
+        	printf "$LUNE"
+            ;;
+        "21")
+        	printf "$JUGEMENT"
+            ;;
+        "22")
+        	printf "$MAT"
+            ;;
+esac
+
+sleep 15
+
+printf '\n\nConcernant votre présent, vous avez tiré : \n'
+
+case $randomB in
+        "1")
+        	printf "$BATELEUR"
+            ;;
+        "2")
+        	printf "$IMPERATRICE"
+            ;;
+        "3")
+        	printf "$PAPE"
+            ;;
+        "4")
+        	printf "$CHARIOT"
+            ;;
+        "5")
+        	printf "$HERMITE"
+            ;;
+        "6")
+        	printf "$FORCE"
+            ;;
+        "7")
+        	printf "$ARCANE"
+            ;;
+        "8")
+        	printf "$DIABLE"
+            ;;
+        "9")
+        	printf "$ETOILE"
+            ;;
+        "10")
+        	printf "$SOLEIL"
+            ;;
+        "11")
+        	printf "$MONDE"
+            ;;
+        "12")
+        	printf "$PAPESSE"
+            ;;
+        "13")
+        	printf "$EMPEREUR"
+            ;;
+        "14")
+        	printf "$AMOUREUX"
+            ;;
+        "15")
+        	printf "$JUSTICE"
+            ;;
+        "16")
+        	printf "$ROUE_DE_FORTUNE"
+            ;;
+        "17")
+        	printf "$PENDU"
+            ;;
+        "18")
+        	printf "$TEMPERANCE"
+            ;;
+        "19")
+        	printf "$MAISON_DIEU"
+            ;;
+        "20")
+        	printf "$LUNE"
+            ;;
+        "21")
+        	printf "$JUGEMENT"
+            ;;
+        "22")
+        	printf "$MAT"
+            ;;
+esac
+
+sleep 15
+
+printf '\n\nConcernant votre futur, vous avez tiré : \n'
+
+case $randomC in
+        "1")
+        	printf "$BATELEUR"
+            ;;
+        "2")
+        	printf "$IMPERATRICE"
+            ;;
+        "3")
+        	printf "$PAPE"
+            ;;
+        "4")
+        	printf "$CHARIOT"
+            ;;
+        "5")
+        	printf "$HERMITE"
+            ;;
+        "6")
+        	printf "$FORCE"
+            ;;
+        "7")
+        	printf "$ARCANE"
+            ;;
+        "8")
+        	printf "$DIABLE"
+            ;;
+        "9")
+        	printf "$ETOILE"
+            ;;
+        "10")
+        	printf "$SOLEIL"
+            ;;
+        "11")
+        	printf "$MONDE"
+            ;;
+        "12")
+        	printf "$PAPESSE"
+            ;;
+        "13")
+        	printf "$EMPEREUR"
+            ;;
+        "14")
+        	printf "$AMOUREUX"
+            ;;
+        "15")
+        	printf "$JUSTICE"
+            ;;
+        "16")
+        	printf "$ROUE_DE_FORTUNE"
+            ;;
+        "17")
+        	printf "$PENDU"
+            ;;
+        "18")
+        	printf "$TEMPERANCE"
+            ;;
+        "19")
+        	printf "$MAISON_DIEU"
+            ;;
+        "20")
+        	printf "$LUNE"
+            ;;
+        "21")
+        	printf "$JUGEMENT"
+            ;;
+        "22")
+        	printf "$MAT"
+            ;;
+esac
+
+sleep 5
+
+printf '\n\nAu revoir... \n'

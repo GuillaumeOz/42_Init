@@ -1,0 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    11                                                 :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: gozsertt <gozsertt@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2019/06/19 16:16:18 by gozsertt          #+#    #+#              #
+#    Updated: 2019/06/26 14:48:25 by gozsertt         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+echo '\n[Commande qui permet d afficher l espace disponible et affiche la 
+sortie d une manière humainement compréhensible]:\n'
+df -h

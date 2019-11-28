@@ -1,0 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    15                                                 :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: gozsertt <gozsertt@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2019/06/19 18:58:19 by gozsertt          #+#    #+#              #
+#    Updated: 2019/06/26 14:49:13 by gozsertt         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+echo '\n[Commande qui permet de kill le processus de la commande en background 
+grace à son PID]:\n'
+kill <PID>

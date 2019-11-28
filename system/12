@@ -1,0 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    12                                                 :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: gozsertt <gozsertt@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2019/06/19 16:20:54 by gozsertt          #+#    #+#              #
+#    Updated: 2019/06/26 14:48:48 by gozsertt         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+echo '\n[Commande pour déterminer la taille exacte de chaque dossier de /var 
+d une manière humainement compréhensible suivi du chemin de celui-ci]:\n'
+sudo du -sh /var/*
